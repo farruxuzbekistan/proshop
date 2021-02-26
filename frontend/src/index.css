@@ -1,3 +1,5 @@
+
+
 main {
   min-height: 80vh;
 }
@@ -21,7 +23,7 @@ h2 {
 }
 
 /* carousel */
-.carousel-item-next,
+/* .carousel-item-next,
 .carousel-item-prev,
 .carousel-item.active {
   display: flex;
@@ -50,4 +52,148 @@ h2 {
   .carousel-caption h2 {
     font-size: 2.5vw;
   }
+} */
+
+
+.carousel-control-next , .carousel-control-prev  {
+   
+    width: 3.25rem;
+    height: 3.25rem;
+    margin-top: -1.625rem;
+    font-size: .9558823529rem;
+    line-height: 3.125rem;
+    border: 1px solid #e3e9ef;
+    border-radius: 50%;
+    background-color: #fff;
+    text-align: center;
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    
+}
+
+
+
+
+.slider-text .h2 {
+  font-weight: 300 !important
+}
+
+.slider img {
+   
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+
+}
+
+.tns-item .from-top {
+  transform: translateY(-45px);
+}
+
+.fs-lg {
+  font-size: 1.125rem !important;
+}
+
+@media (min-width: 1200px) {
+h2, .h2 {
+    font-size: 2rem;
+}
+
+.display-5 {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+}
+
+@media (min-width: 992px){
+.text-lg-nowrap {
+    white-space: nowrap !important;
+}
+.text-lg-start {
+  text-align: left !important;
+}
+
+.order-lg-2 {
+  order: 2 !important;
+}
+}
+
+
+
+.btn , button , input , select {
+  border-radius: .3125rem !important;
+}
+
+.carousel-indicators li {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 3px solid #ddd;
+}
+
+@media screen and (max-width:760px){
+  .navbar input {
+    margin-bottom: 1rem;
+  }
+
+  .slider img {
+    object-fit: cover;
+    vertical-align: middle;
+    white-space: normal;
+  }
+
+  .slider img {
+   
+      max-width: 100%;
+      height: auto;
+      vertical-align: middle;
+  
+  }
+
+  .slider-text h3 {
+     font-size: 20px;
+  }
+
+  .slider-text h2 {
+    font-size: 25px;
+    font-weight: 600;
+  }
+
+  .slider-text p {
+    font-size: 16px;
+  }
+
+  .footer-row {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .social-media {
+    justify-content: center;
+    padding-bottom: 1rem;
+  }
+
+  
+}
+
+ .btn-social{
+  background-color: rgba(255,255,255,0.08);
+
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border: 1px solid transparent;
+  transition: border-color 0.25s ease-in-out,background-color 0.25s ease-in-out,color 0.25s ease-in-out,box-shadow 0.25s ease-in-out;
+  border-radius: .3125rem;
+  /* background-color: #f3f5f9;
+  color: #4b566b; */
+  font-size: .875rem;
+  text-align: center;
+  text-decoration: none !important;
 }
