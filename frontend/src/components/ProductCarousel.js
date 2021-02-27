@@ -15,7 +15,7 @@ const ProductCarousel = () => {
                 <h3 className="h2 text-light fw-light pb-1 from-start">{img.h3Text}</h3>
                 <h2 className="text-light display-5 from-start delay-1">{img.h2Text}</h2>
                 <p className="fs-lg text-light pb-3 from-start delay-2">{img.pText}</p>
-                <div className="d-table scale-up delay-4 mx-auto mx-lg-0"><a className="btn btn-primary" href="shop-grid-ls.html">{img.buttonText}<i className="ci-arrow-right ms-2 me-n1"></i></a></div>
+                <div className="d-table scale-up delay-4 mx-auto mx-lg-0"><Link className="btn btn-primary"to='/'>{img.buttonText}<i className="ci-arrow-right ms-2 me-n1"></i></Link></div>
               </div>
             </div>
           </div>
