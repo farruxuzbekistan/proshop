@@ -2,7 +2,7 @@ const carouselImages = [
     
     {
     _id:1,
-    src: './images/01.jpg',
+    src: 'images/01.jpg',
     background: '#3aafd2',
     maxWidth : '42rem',
     zIndex : '10',
@@ -13,7 +13,7 @@ const carouselImages = [
 },
     {
     _id:2,
-    src: './images/02.jpg',
+    src: 'images/02.jpg',
     background: '#f5b1b0',
     maxWidth : '42rem',
     zIndex : '10',
@@ -24,7 +24,7 @@ const carouselImages = [
 } ,
     {
     _id:3,
-    src: './images/03.jpg',
+    src: 'images/03.jpg',
     background: '#eba170',
     maxWidth : '42rem',
     zIndex : '10',
