@@ -21,33 +21,89 @@ h2 {
 }
 
 /* carousel */
-.carousel-item-next,
-.carousel-item-prev,
-.carousel-item.active {
-  display: flex;
+
+.slider img {
+
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+
 }
-.carousel-caption {
+
+.fw-light {
+  font-weight: 300 !important;
+}
+
+.carousel-control-next , .carousel-control-prev {
   position: absolute;
-  top: 0;
-}
-
-.carousel-caption h2 {
-  color: #fff;
-}
-
-.carousel img {
-  height: 300px;
-  padding: 30px;
-  margin: 40px;
+  top: 50%;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-top: -1.375rem;
+  transition: all .3s ease-in-out;
+  border: 1px solid #e3e9ef;
   border-radius: 50%;
-  margin-left: auto;
-  margin-right: auto;
+  background-color: #fff;
+  font-size: .8088235294rem;
+  line-height: 2.625rem;
+  text-align: center;
+  z-index: 10; 
 }
-.carousel a {
-  margin: 0 auto;
+
+.carousel-indicators li {
+   width: 15px;
+   height: 15px;
+   border-radius: 50%;
+   background-color: #fff;
 }
-@media (max-width: 900px) {
-  .carousel-caption h2 {
-    font-size: 2.5vw;
+
+.btn , button , input , select , area , input[type] {
+  border-radius: .3125rem;
+}
+
+.fs-lg {
+  font-size: 1.125rem !important;
+}
+
+.slider h2 {
+  font-size: 3rem;
+}
+
+
+@media (min-width: 1200px){
+.slider h2, .slider .h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: .75rem;
+
+}}
+
+@media (min-width: 992px){
+.text-lg-nowrap {
+    white-space: nowrap !important;
   }
+  .text-lg-start {
+    text-align: left !important;
+}
+
+}
+
+@media screen and (max-width : 768px){
+  .slider h2 {
+    font-size: 25px !important;
+  }
+
+  .slider .h2 {
+    font-size: 20px !important;
+  }
+
+  .slider p {
+    font-size: 16px;
+  }
+
+  .navbar input {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+
 }
