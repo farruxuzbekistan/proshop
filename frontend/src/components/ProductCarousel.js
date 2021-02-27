@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import {carouselImages} from '../carouselImg'
+import carouselImages from '../carouselData/carouselImg'
 import { Carousel} from 'react-bootstrap'
 
 
