@@ -31,11 +31,11 @@ const HomeScreen = ({ match }) => {
         <ProductCarousel />
       ) : (
         <Link to='/' className='btn btn-light'>
-          Go Back
+          Ortga Qaytish
         </Link>
       )}
        <Container>
-      <h1>Latest Products</h1>
+      <h1>Yangi Mahsulotlar</h1>
        {loading ? (
         <Loader />
       ) : error ? (

@@ -21,7 +21,7 @@ const authUser = asyncHandler(async (req, res) => {
     })
   } else {
     res.status(401)
-    throw new Error('Invalid email or password')
+    throw new Error('parol yoki email noto`g`ri')
   }
 })
 
@@ -35,7 +35,7 @@ const registerUser = asyncHandler(async (req, res) => {
 
   if (userExists) {
     res.status(400)
-    throw new Error('User already exists')
+    throw new Error('Bunday foydalanuvchi mavjud')
   }
 
   const user = await User.create({
@@ -56,7 +56,7 @@ const registerUser = asyncHandler(async (req, res) => {
     })
   } else {
     res.status(400)
-    throw new Error('Invalid user data')
+    throw new Error('User ma`lumoti noto`g`ri')
   }
 })
 
@@ -76,7 +76,7 @@ const getUserProfile = asyncHandler(async (req, res) => {
     })
   } else {
     res.status(404)
-    throw new Error('User not found')
+    throw new Error('Foydalanuvchi topilmadi')
   }
 })
 
@@ -125,10 +125,10 @@ const deleteUser = asyncHandler(async (req, res) => {
 
   if (user) {
     await user.remove()
-    res.json({ message: 'User removed' })
+    res.json({ message: 'User o`chirildi' })
   } else {
     res.status(404)
-    throw new Error('User not found')
+    throw new Error('User topilmadi')
   }
 })
 
@@ -142,7 +142,7 @@ const getUserById = asyncHandler(async (req, res) => {
     res.json(user)
   } else {
     res.status(404)
-    throw new Error('User not found')
+    throw new Error('User topilmadi')
   }
 })
 
@@ -169,7 +169,7 @@ const updateUser = asyncHandler(async (req, res) => {
     })
   } else {
     res.status(404)
-    throw new Error('User not found')
+    throw new Error('User topilmadi')
   }
 })
 

@@ -31,40 +31,41 @@ const LoginScreen = ({ location, history }) => {
 
   return (
     <FormContainer>
-      <h1>Sign In</h1>
+      <h1>Tizimga Kirish</h1>
       {error && <Message variant='danger'>{error}</Message>}
       {loading && <Loader />}
       <Form onSubmit={submitHandler}>
         <Form.Group controlId='email'>
-          <Form.Label>Email Address</Form.Label>
+          <Form.Label>Elektron Pochta</Form.Label>
           <Form.Control
             type='email'
-            placeholder='Enter email'
+            placeholder='Email kiriting'
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           ></Form.Control>
         </Form.Group>
 
         <Form.Group controlId='password'>
-          <Form.Label>Password</Form.Label>
+          <Form.Label>Parol</Form.Label>
           <Form.Control
             type='password'
-            placeholder='Enter password'
+            placeholder='Parolni kiriting'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           ></Form.Control>
         </Form.Group>
 
         <Button type='submit' variant='primary'>
-          Sign In
+          Tizimga kirish
         </Button>
       </Form>
 
       <Row className='py-3'>
-        <Col>
-          New Customer?{' '}
-          <Link to={redirect ? `/register?redirect=${redirect}` : '/register'}>
-            Register
+        <Col className="text-center">
+          Yangi foydalanuvchimisiz unda avval ro'yxatdan o'ting ?{' '}
+          <Link className="text-info" to={redirect ? `/register?redirect=${redirect}` : '/register'}>
+            <br/>
+            Ro'yxatdan o'tish uchun
           </Link>
         </Col>
       </Row>

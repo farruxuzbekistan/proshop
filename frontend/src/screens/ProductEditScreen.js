@@ -97,7 +97,7 @@ const ProductEditScreen = ({ match, history }) => {
         Go Back
       </Link>
       <FormContainer>
-        <h1>Edit Product</h1>
+        <h1>Mahsulotga o'zgartirish kiritish</h1>
         {loadingUpdate && <Loader />}
         {errorUpdate && <Message variant='danger'>{errorUpdate}</Message>}
         {loading ? (
@@ -107,30 +107,30 @@ const ProductEditScreen = ({ match, history }) => {
         ) : (
           <Form onSubmit={submitHandler}>
             <Form.Group controlId='name'>
-              <Form.Label>Name</Form.Label>
+              <Form.Label>Nomi</Form.Label>
               <Form.Control
                 type='name'
-                placeholder='Enter name'
+                placeholder='Nomini kiriting'
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               ></Form.Control>
             </Form.Group>
 
             <Form.Group controlId='price'>
-              <Form.Label>Price</Form.Label>
+              <Form.Label>Narx</Form.Label>
               <Form.Control
                 type='number'
-                placeholder='Enter price'
+                placeholder='Narxini kiriting'
                 value={price}
                 onChange={(e) => setPrice(e.target.value)}
               ></Form.Control>
             </Form.Group>
 
             <Form.Group controlId='image'>
-              <Form.Label>Image</Form.Label>
+              <Form.Label>Rasm</Form.Label>
               <Form.Control
                 type='text'
-                placeholder='Enter image url'
+                placeholder='Rasmni yuklang'
                 value={image}
                 onChange={(e) => setImage(e.target.value)}
               ></Form.Control>
@@ -147,17 +147,17 @@ const ProductEditScreen = ({ match, history }) => {
               <Form.Label>Brand</Form.Label>
               <Form.Control
                 type='text'
-                placeholder='Enter brand'
+                placeholder='Brand kiriting'
                 value={brand}
                 onChange={(e) => setBrand(e.target.value)}
               ></Form.Control>
             </Form.Group>
 
             <Form.Group controlId='countInStock'>
-              <Form.Label>Count In Stock</Form.Label>
+              <Form.Label>Mahsulot soni</Form.Label>
               <Form.Control
                 type='number'
-                placeholder='Enter countInStock'
+                placeholder='Mahsulot sonini kiriting'
                 value={countInStock}
                 onChange={(e) => setCountInStock(e.target.value)}
               ></Form.Control>
@@ -167,24 +167,24 @@ const ProductEditScreen = ({ match, history }) => {
               <Form.Label>Category</Form.Label>
               <Form.Control
                 type='text'
-                placeholder='Enter category'
+                placeholder='category kiriting'
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
               ></Form.Control>
             </Form.Group>
 
             <Form.Group controlId='description'>
-              <Form.Label>Description</Form.Label>
+              <Form.Label>Ma;lumot</Form.Label>
               <Form.Control
                 type='text'
-                placeholder='Enter description'
+                placeholder="Ma'lumot kiriting"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
               ></Form.Control>
             </Form.Group>
 
             <Button type='submit' variant='primary'>
-              Update
+              Yangilash
             </Button>
           </Form>
         )}

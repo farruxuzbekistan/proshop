@@ -55,7 +55,7 @@ const UserEditScreen = ({ match, history }) => {
         Go Back
       </Link>
       <FormContainer>
-        <h1>Edit User</h1>
+        <h1>Foydalanuvchiga o'zgartirish kiritish</h1>
         {loadingUpdate && <Loader />}
         {errorUpdate && <Message variant='danger'>{errorUpdate}</Message>}
         {loading ? (
@@ -65,29 +65,29 @@ const UserEditScreen = ({ match, history }) => {
         ) : (
           <Form onSubmit={submitHandler}>
             <Form.Group controlId='name'>
-              <Form.Label>Name</Form.Label>
+              <Form.Label>Ism</Form.Label>
               <Form.Control
                 type='name'
-                placeholder='Enter name'
+                placeholder='Ism kiriting'
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               ></Form.Control>
             </Form.Group>
 
             <Form.Group controlId='phone'>
-              <Form.Label>Phone</Form.Label>
+              <Form.Label>Telefon</Form.Label>
               <Form.Control
                 type='phone'
-                placeholder='Enter Phone'
+                placeholder='Telefon raqam kiriting'
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
               ></Form.Control>
             </Form.Group>
             <Form.Group controlId='email'>
-              <Form.Label>Email Address</Form.Label>
+              <Form.Label>Email</Form.Label>
               <Form.Control
                 type='email'
-                placeholder='Enter email'
+                placeholder='Email kiriting'
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               ></Form.Control>
@@ -96,14 +96,14 @@ const UserEditScreen = ({ match, history }) => {
             <Form.Group controlId='isadmin'>
               <Form.Check
                 type='checkbox'
-                label='Is Admin'
+                label='Adminlikka tayinlash'
                 checked={isAdmin}
                 onChange={(e) => setIsAdmin(e.target.checked)}
               ></Form.Check>
             </Form.Group>
 
             <Button type='submit' variant='primary'>
-              Update
+              Yangilash
             </Button>
           </Form>
         )}

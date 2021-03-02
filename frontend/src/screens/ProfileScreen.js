@@ -10,6 +10,7 @@ import { USER_UPDATE_PROFILE_RESET } from '../constants/userConstants'
 
 const ProfileScreen = ({ location, history }) => {
   const [name, setName] = useState('')
+  const [phone, setPhone] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
@@ -33,12 +34,13 @@ const ProfileScreen = ({ location, history }) => {
     if (!userInfo) {
       history.push('/login')
     } else {
-      if (!user || !user.name || success) {
+      if (!user  || !user.name || !user.phone || success) {
         dispatch({ type: USER_UPDATE_PROFILE_RESET })
         dispatch(getUserDetails('profile'))
         dispatch(listMyOrders())
       } else {
         setName(user.name)
+        setPhone(user.phone)
         setEmail(user.email)
       }
     }
@@ -47,19 +49,19 @@ const ProfileScreen = ({ location, history }) => {
   const submitHandler = (e) => {
     e.preventDefault()
     if (password !== confirmPassword) {
-      setMessage('Passwords do not match')
+      setMessage('Parol bir xil emas')
     } else {
-      dispatch(updateUserProfile({ id: user._id, name, email, password }))
+      dispatch(updateUserProfile({ id: user._id, name, phone , email, password }))
     }
   }
 
   return (
     <Row>
       <Col md={3}>
-        <h2>User Profile</h2>
+        <h2>Foydalanuvchi Profili</h2>
         {message && <Message variant='danger'>{message}</Message>}
         {}
-        {success && <Message variant='success'>Profile Updated</Message>}
+        {success && <Message variant='success'>Profilni yangilash</Message>}
         {loading ? (
           <Loader />
         ) : error ? (
@@ -67,53 +69,62 @@ const ProfileScreen = ({ location, history }) => {
         ) : (
           <Form onSubmit={submitHandler}>
             <Form.Group controlId='name'>
-              <Form.Label>Name</Form.Label>
+              <Form.Label>Ism</Form.Label>
               <Form.Control
                 type='name'
-                placeholder='Enter name'
+                placeholder='Ism kiriting'
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               ></Form.Control>
             </Form.Group>
 
+            <Form.Group controlId='phone'>
+              <Form.Label>Telefon</Form.Label>
+              <Form.Control
+                type='phone'
+                placeholder='Telefon kiriting'
+                value={phone}
+                onChange={(e) => setEmail(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
             <Form.Group controlId='email'>
-              <Form.Label>Email Address</Form.Label>
+              <Form.Label>Elektron Pochta</Form.Label>
               <Form.Control
                 type='email'
-                placeholder='Enter email'
+                placeholder='Email kiriting'
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               ></Form.Control>
             </Form.Group>
 
             <Form.Group controlId='password'>
-              <Form.Label>Password</Form.Label>
+              <Form.Label>Parol</Form.Label>
               <Form.Control
                 type='password'
-                placeholder='Enter password'
+                placeholder='Parol kiriting'
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               ></Form.Control>
             </Form.Group>
 
             <Form.Group controlId='confirmPassword'>
-              <Form.Label>Confirm Password</Form.Label>
+              <Form.Label>Parolni tasdiqlash</Form.Label>
               <Form.Control
                 type='password'
-                placeholder='Confirm password'
+                placeholder='Parolni qayta kiriting'
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
               ></Form.Control>
             </Form.Group>
 
             <Button type='submit' variant='primary'>
-              Update
+              Yangilash
             </Button>
           </Form>
         )}
       </Col>
       <Col md={9}>
-        <h2>My Orders</h2>
+        <h2>Mening Buyurtmalarim</h2>
         {loadingOrders ? (
           <Loader />
         ) : errorOrders ? (
@@ -123,10 +134,10 @@ const ProfileScreen = ({ location, history }) => {
             <thead>
               <tr>
                 <th>ID</th>
-                <th>DATE</th>
-                <th>TOTAL</th>
-                <th>PAID</th>
-                <th>DELIVERED</th>
+                <th>SANA</th>
+                <th>UMUMIY NARX</th>
+                {/* <th>To'langan</th>
+                <th>Yetkazib Berilgan</th> */}
                 <th></th>
               </tr>
             </thead>
@@ -136,27 +147,7 @@ const ProfileScreen = ({ location, history }) => {
                   <td>{order._id}</td>
                   <td>{order.createdAt.substring(0, 10)}</td>
                   <td>{order.totalPrice}</td>
-                  <td>
-                    {order.isPaid ? (
-                      order.paidAt.substring(0, 10)
-                    ) : (
-                      <i className='fas fa-times' style={{ color: 'red' }}></i>
-                    )}
-                  </td>
-                  <td>
-                    {order.isDelivered ? (
-                      order.deliveredAt.substring(0, 10)
-                    ) : (
-                      <i className='fas fa-times' style={{ color: 'red' }}></i>
-                    )}
-                  </td>
-                  <td>
-                    <LinkContainer to={`/order/${order._id}`}>
-                      <Button className='btn-sm' variant='light'>
-                        Details
-                      </Button>
-                    </LinkContainer>
-                  </td>
+                
                 </tr>
               ))}
             </tbody>

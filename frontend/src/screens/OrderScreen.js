@@ -91,21 +91,21 @@ const OrderScreen = ({ match, history }) => {
     <Message variant='danger'>{error}</Message>
   ) : (
     <>
-      <h1>Order {order._id}</h1>
+      <h1>Buyurtma raqami {order._id}</h1>
       <Row>
         <Col md={8}>
           <ListGroup variant='flush'>
             <ListGroup.Item>
-              <h2>Shipping</h2>
+              <h2>Yetkazish Xizmati</h2>
               <p>
-                <strong>Name: </strong> {order.user.name}
+                <strong>Ism: </strong> {order.user.name}
               </p>
               <p>
                 <strong>Email: </strong>{' '}
                 <a href={`mailto:${order.user.email}`}>{order.user.email}</a>
               </p>
               <p>
-                <strong>Address:</strong>
+                <strong>Manzil:</strong>
                 {order.shippingAddress.address}, {order.shippingAddress.city}{' '}
                 {order.shippingAddress.phone},{' '}
                 {order.shippingAddress.country}
@@ -119,14 +119,14 @@ const OrderScreen = ({ match, history }) => {
               )} */}
             </ListGroup.Item>
             <ListGroup.Item>
-                <p><strong>Admin: </strong>admins will call within 2 hours</p>
-                <p><strong>Order: </strong> The order will be delivered within 2 days </p>
+                <p><strong>Admin: </strong>Siz bilan 2 soat ichida aloqaga chiqamiz</p>
+                <p><strong>Buyurtma: </strong> Xaridingiz uchun Rahmat. Buyurtmangiz 2 kun ichida yetkazib beriladi </p>
             </ListGroup.Item>
 
             <ListGroup.Item>
-              <h2>Payment Method</h2>
+              <h2>To'lov Turi</h2>
               <p>
-                <strong>Method: </strong>
+                <strong>Usul: </strong>
                 {order.paymentMethod}
               </p>
               {/* {order.isPaid ? (
@@ -137,9 +137,9 @@ const OrderScreen = ({ match, history }) => {
             </ListGroup.Item>
 
             <ListGroup.Item>
-              <h2>Order Items</h2>
+              <h2>Buyurtmalar</h2>
               {order.orderItems.length === 0 ? (
-                <Message>Order is empty</Message>
+                <Message>Buyurtma bo'sh</Message>
               ) : (
                 <ListGroup variant='flush'>
                   {order.orderItems.map((item, index) => (
@@ -173,17 +173,17 @@ const OrderScreen = ({ match, history }) => {
           <Card>
             <ListGroup variant='flush'>
               <ListGroup.Item>
-                <h2>Order Summary</h2>
+                <h2>Buyurma</h2>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Items</Col>
+                  <Col>Mahsulotlar</Col>
                   <Col>${order.itemsPrice}</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Shipping</Col>
+                  <Col>Yetkazib Berish</Col>
                   <Col>${order.shippingPrice}</Col>
                 </Row>
               </ListGroup.Item>
@@ -195,7 +195,7 @@ const OrderScreen = ({ match, history }) => {
               </ListGroup.Item> */}
               <ListGroup.Item>
                 <Row>
-                  <Col>Total</Col>
+                  <Col>Umumiy Narx</Col>
                   <Col>${order.totalPrice}</Col>
                 </Row>
               </ListGroup.Item>

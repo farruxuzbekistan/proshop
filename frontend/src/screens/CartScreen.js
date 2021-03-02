@@ -32,10 +32,10 @@ const CartScreen = ({ match, location, history }) => {
   return (
     <Row>
       <Col md={8}>
-        <h1>Shopping Cart</h1>
+        <h1>Korzinka Karta</h1>
         {cartItems.length === 0 ? (
           <Message>
-            Your cart is empty <Link to='/'>Go Back</Link>
+            Korzinka bo'sh <Link to='/'>Ortga Qaytish</Link>
           </Message>
         ) : (
           <ListGroup variant='flush'>
@@ -86,8 +86,8 @@ const CartScreen = ({ match, location, history }) => {
           <ListGroup variant='flush'>
             <ListGroup.Item>
               <h2>
-                Subtotal ({cartItems.reduce((acc, item) => acc + item.qty, 0)})
-                items
+                Umumiy ({cartItems.reduce((acc, item) => acc + item.qty, 0)})
+                xaridlar
               </h2>
               $
               {cartItems
@@ -101,7 +101,7 @@ const CartScreen = ({ match, location, history }) => {
                 disabled={cartItems.length === 0}
                 onClick={checkoutHandler}
               >
-                Proceed To Checkout
+                Davom Etish
               </Button>
             </ListGroup.Item>
           </ListGroup>

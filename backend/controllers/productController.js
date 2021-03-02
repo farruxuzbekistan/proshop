@@ -35,7 +35,7 @@ const getProductById = asyncHandler(async (req, res) => {
     res.json(product)
   } else {
     res.status(404)
-    throw new Error('Product not found')
+    throw new Error('Mahsulot topilmadi')
   }
 })
 
@@ -47,10 +47,10 @@ const deleteProduct = asyncHandler(async (req, res) => {
 
   if (product) {
     await product.remove()
-    res.json({ message: 'Product removed' })
+    res.json({ message: 'Mahsulot o`chirildi' })
   } else {
     res.status(404)
-    throw new Error('Product not found')
+    throw new Error('Mahsulot topilmadi')
   }
 })
 
@@ -103,7 +103,7 @@ const updateProduct = asyncHandler(async (req, res) => {
     res.json(updatedProduct)
   } else {
     res.status(404)
-    throw new Error('Product not found')
+    throw new Error('Mahsulot topilmadi')
   }
 })
 
@@ -122,7 +122,7 @@ const createProductReview = asyncHandler(async (req, res) => {
 
     if (alreadyReviewed) {
       res.status(400)
-      throw new Error('Product already reviewed')
+      throw new Error('Mahsulotga allaqachon fikr bildiridi')
     }
 
     const review = {
@@ -141,10 +141,10 @@ const createProductReview = asyncHandler(async (req, res) => {
       product.reviews.length
 
     await product.save()
-    res.status(201).json({ message: 'Review added' })
+    res.status(201).json({ message: 'Fikr qo`shild' })
   } else {
     res.status(404)
-    throw new Error('Product not found')
+    throw new Error('Mahsulot topilmadi')
   }
 })
 

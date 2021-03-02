@@ -26,13 +26,13 @@ const ShippingScreen = ({ history }) => {
   return (
     <FormContainer>
       <CheckoutSteps step1 step2 />
-      <h1>Shipping</h1>
+      <h1>Yetkazish Xizmati</h1>
       <Form onSubmit={submitHandler}>
         <Form.Group controlId='address'>
-          <Form.Label>Address</Form.Label>
+          <Form.Label>Manzil</Form.Label>
           <Form.Control
             type='text'
-            placeholder='Enter address'
+            placeholder='Manzilni kiriting (misol uchun : 2-dom sebzor olmazor toshkent)'
             value={address}
             required
             onChange={(e) => setAddress(e.target.value)}
@@ -40,10 +40,10 @@ const ShippingScreen = ({ history }) => {
         </Form.Group>
 
         <Form.Group controlId='city'>
-          <Form.Label>City</Form.Label>
+          <Form.Label>Shahar</Form.Label>
           <Form.Control
             type='text'
-            placeholder='Enter city'
+            placeholder='Shaharni kiriting'
             value={city}
             required
             onChange={(e) => setCity(e.target.value)}
@@ -51,10 +51,10 @@ const ShippingScreen = ({ history }) => {
         </Form.Group>
 
         <Form.Group controlId='phone'>
-          <Form.Label>Phone</Form.Label>
+          <Form.Label>Telefon Raqam</Form.Label>
           <Form.Control
             type='text'
-            placeholder='Enter phone number'
+            placeholder='Telefon raqamingizni kiriting'
             value={phone}
             required
             onChange={(e) => setPhone(e.target.value)}
@@ -62,10 +62,10 @@ const ShippingScreen = ({ history }) => {
         </Form.Group>
 
         <Form.Group controlId='country'>
-          <Form.Label>Country</Form.Label>
+          <Form.Label>Mamlakat</Form.Label>
           <Form.Control
             type='text'
-            placeholder='Enter country'
+            placeholder='Mamlakat kiriting'
             value={country}
             required
             onChange={(e) => setCountry(e.target.value)}
@@ -73,7 +73,7 @@ const ShippingScreen = ({ history }) => {
         </Form.Group>
 
         <Button type='submit' variant='primary'>
-          Continue
+          Davom Etish
         </Button>
       </Form>
     </FormContainer>

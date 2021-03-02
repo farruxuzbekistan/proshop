@@ -26,17 +26,17 @@ const PaymentScreen = ({ history }) => {
   return (
     <FormContainer>
       <CheckoutSteps step1 step2 step3 />
-      <h1>Payment Method</h1>
+      <h1>To'lov Turi</h1>
       <Form onSubmit={submitHandler}>
         <Form.Group>
-          <Form.Label as='legend'>Select Method</Form.Label>
+          <Form.Label as='legend'>Tanlash</Form.Label>
           <Col>
             <Form.Check
               type='radio'
-              label='Cash'
+              label='Naxt Pul'
               id='cash'
               name='paymentMethod'
-              value='Cash'
+              value='Naxt Pul'
               checked
               onChange={(e) => setPaymentMethod(e.target.value)}
             ></Form.Check>
@@ -76,7 +76,7 @@ const PaymentScreen = ({ history }) => {
         </Form.Group>
 
         <Button type='submit' variant='primary'>
-          Continue
+            Davom Etish
         </Button>
       </Form>
     </FormContainer>

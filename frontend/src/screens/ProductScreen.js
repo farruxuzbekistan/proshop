@@ -60,7 +60,7 @@ const ProductScreen = ({ history, match }) => {
   return (
     <>
       <Link className='btn btn-light my-3' to='/'>
-        Go Back
+        Ortga Qaytish
       </Link>
       {loading ? (
         <Loader />
@@ -84,9 +84,9 @@ const ProductScreen = ({ history, match }) => {
                     text={`${product.numReviews} reviews`}
                   />
                 </ListGroup.Item>
-                <ListGroup.Item>Price: ${product.price}</ListGroup.Item>
+                <ListGroup.Item>Narx: ${product.price}</ListGroup.Item>
                 <ListGroup.Item>
-                  Description: {product.description}
+                  Ma'lumot: {product.description}
                 </ListGroup.Item>
               </ListGroup>
             </Col>
@@ -95,7 +95,7 @@ const ProductScreen = ({ history, match }) => {
                 <ListGroup variant='flush'>
                   <ListGroup.Item>
                     <Row>
-                      <Col>Price:</Col>
+                      <Col>Narx:</Col>
                       <Col>
                         <strong>${product.price}</strong>
                       </Col>
@@ -114,7 +114,7 @@ const ProductScreen = ({ history, match }) => {
                   {product.countInStock > 0 && (
                     <ListGroup.Item>
                       <Row>
-                        <Col>Qty</Col>
+                        <Col>Soni</Col>
                         <Col>
                           <Form.Control
                             as='select'
@@ -141,7 +141,7 @@ const ProductScreen = ({ history, match }) => {
                       type='button'
                       disabled={product.countInStock === 0}
                     >
-                      Add To Cart
+                      Korzinkaga Qo'shish
                     </Button>
                   </ListGroup.Item>
                 </ListGroup>
@@ -150,7 +150,7 @@ const ProductScreen = ({ history, match }) => {
           </Row>
           <Row>
             <Col md={6}>
-              <h2>Reviews</h2>
+              <h2>Fikrlar</h2>
               {product.reviews.length === 0 && <Message>No Reviews</Message>}
               <ListGroup variant='flush'>
                 {product.reviews.map((review) => (
@@ -162,10 +162,10 @@ const ProductScreen = ({ history, match }) => {
                   </ListGroup.Item>
                 ))}
                 <ListGroup.Item>
-                  <h2>Write a Customer Review</h2>
+                  <h2>Fikr Bildirish</h2>
                   {successProductReview && (
                     <Message variant='success'>
-                      Review submitted successfully
+                    Muvaffaqiyatli amalga oshirildi
                     </Message>
                   )}
                   {loadingProductReview && <Loader />}
@@ -175,13 +175,13 @@ const ProductScreen = ({ history, match }) => {
                   {userInfo ? (
                     <Form onSubmit={submitHandler}>
                       <Form.Group controlId='rating'>
-                        <Form.Label>Rating</Form.Label>
+                        <Form.Label>Reyting</Form.Label>
                         <Form.Control
                           as='select'
                           value={rating}
                           onChange={(e) => setRating(e.target.value)}
                         >
-                          <option value=''>Select...</option>
+                          <option value=''>Tanlash...</option>
                           <option value='1'>1 - Poor</option>
                           <option value='2'>2 - Fair</option>
                           <option value='3'>3 - Good</option>
@@ -190,7 +190,7 @@ const ProductScreen = ({ history, match }) => {
                         </Form.Control>
                       </Form.Group>
                       <Form.Group controlId='comment'>
-                        <Form.Label>Comment</Form.Label>
+                        <Form.Label>Komintariya qoldirish</Form.Label>
                         <Form.Control
                           as='textarea'
                           row='3'
@@ -203,12 +203,12 @@ const ProductScreen = ({ history, match }) => {
                         type='submit'
                         variant='primary'
                       >
-                        Submit
+                        qoldirish
                       </Button>
                     </Form>
                   ) : (
                     <Message>
-                      Please <Link to='/login'>sign in</Link> to write a review{' '}
+                      Iltimos fikr qoldirish uchun avval  <Link to='/login'>Tizimga kiring</Link>
                     </Message>
                   )}
                 </ListGroup.Item>

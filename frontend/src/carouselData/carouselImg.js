@@ -6,10 +6,10 @@ const carouselImages = [
     background: '#3aafd2',
     maxWidth : '42rem',
     zIndex : '10',
-    h3Text: 'Has just arrived',
-    h2Text : 'Huge Summer Collection',
-    pText : 'Swimwear, Tops, Shorts, Sunglasses &amp; much more...',
-    buttonText : 'Shop Now'
+    h3Text: 'Eng yangi mahsulotlar',
+    h2Text : 'Katta miqdordagi mahsulotlar',
+    pText : 'Ko`ylak, Bosh kiyim, Shim ,Yubka , Oyoq kiyim &amp; yanada ko`proq...',
+    buttonText : 'Xarid Qilish'
 },
     {
     _id:2,
@@ -17,10 +17,10 @@ const carouselImages = [
     background: '#f5b1b0',
     maxWidth : '42rem',
     zIndex : '10',
-    h3Text: 'Hurry up! Limited time offer.',
-    h2Text : 'Women Sportswear Sale',
+    h3Text: 'Shoshiling o`zingizga mosini tanlang',
+    h2Text : 'Ayollar ko`ylaklari',
     pText : 'Sneakers, Keds, Sweatshirts, Hoodies &amp; much more...',
-    buttonText : 'Shop Now'
+    buttonText : 'Xarid Qilish'
 } ,
     {
     _id:3,
@@ -29,9 +29,9 @@ const carouselImages = [
     maxWidth : '42rem',
     zIndex : '10',
     h3Text: 'Complete your look with',
-    h2Text : "New Men's Accessories",
+    h2Text : "Erkaklar kiyimlari",
     pText : 'Hats &amp; Caps, Sunglasses, Bags &amp; much more...',
-    buttonText : 'Shop Now'
+    buttonText : 'Xarid Qilish'
 }
 
 ]

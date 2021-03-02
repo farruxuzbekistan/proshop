@@ -67,28 +67,28 @@ const PlaceOrderScreen = ({ history }) => {
         <Col md={8}>
           <ListGroup variant='flush'>
             <ListGroup.Item>
-              <h2>Shipping</h2>
+              <h2>Yetkazib Berish</h2>
               <p>
-                <strong>Address:</strong>
+                <strong>Manzil:</strong>
                 {cart.shippingAddress.address}, {cart.shippingAddress.city}{' '}
               ,{' '}
                 {cart.shippingAddress.country}
               </p>
               
-              <p><strong>Phone Number:</strong>{' '}
+              <p><strong>Telefon Nomer:</strong>{' '}
               {cart.shippingAddress.phone}</p>
             </ListGroup.Item>
 
             <ListGroup.Item>
-              <h2>Payment Method</h2>
-              <strong>Method: </strong>
+              <h2>To'lov Turi</h2>
+              <strong>Tur: </strong>
               {cart.paymentMethod}
             </ListGroup.Item>
 
             <ListGroup.Item>
-              <h2>Order Items</h2>
+              <h2>Buyurtme Ma'hsulotlar</h2>
               {cart.cartItems.length === 0 ? (
-                <Message>Your cart is empty</Message>
+                <Message>Sizning Korzinkangiz Bo'sh</Message>
               ) : (
                 <ListGroup variant='flush'>
                   {cart.cartItems.map((item, index) => (
@@ -122,17 +122,17 @@ const PlaceOrderScreen = ({ history }) => {
           <Card>
             <ListGroup variant='flush'>
               <ListGroup.Item>
-                <h2>Order Summary</h2>
+                <h2>Buyurtma</h2>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Items</Col>
+                  <Col>Mahsulotlar:</Col>
                   <Col>${cart.itemsPrice}</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Shipping</Col>
+                  <Col>Yetkazib Berish</Col>
                   <Col>${cart.shippingPrice}</Col>
                 </Row>
               </ListGroup.Item>
@@ -142,9 +142,9 @@ const PlaceOrderScreen = ({ history }) => {
                   <Col>${cart.taxPrice}</Col>
                 </Row>
               </ListGroup.Item> */}
-              <ListGroup.Item>
-                <Row>
-                  <Col>Total</Col>
+              <ListGroup.Item >
+                <Row >
+                  <Col>Umumiy Narx</Col>
                   <Col>${cart.totalPrice}</Col>
                 </Row>
               </ListGroup.Item>
@@ -158,7 +158,7 @@ const PlaceOrderScreen = ({ history }) => {
                   disabled={cart.cartItems === 0}
                   onClick={placeOrderHandler}
                 >
-                  Place Order
+                  Buyurtma qilish
                 </Button>
               </ListGroup.Item>
             </ListGroup>
