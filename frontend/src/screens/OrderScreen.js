@@ -107,9 +107,13 @@ const OrderScreen = ({ match, history }) => {
               <p>
                 <strong>Manzil:</strong>
                 {order.shippingAddress.address}, {order.shippingAddress.city}{' '}
-                {order.shippingAddress.phone},{' '}
+              ,{' '}
                 {order.shippingAddress.country}
               </p>
+               <p>
+               <strong>Telefon:</strong>
+               {order.shippingAddress.phone}
+               </p>
               {/* {order.isDelivered ? (
                 <Message variant='success'>
                   Delivered on {order.deliveredAt}
@@ -159,7 +163,7 @@ const OrderScreen = ({ match, history }) => {
                           </Link>
                         </Col>
                         <Col md={4}>
-                          {item.qty} x ${item.price} = ${item.qty * item.price}
+                          {item.qty} x {item.price} SO'M = {item.qty * item.price}SO'M
                         </Col>
                       </Row>
                     </ListGroup.Item>
@@ -178,13 +182,13 @@ const OrderScreen = ({ match, history }) => {
               <ListGroup.Item>
                 <Row>
                   <Col>Mahsulotlar</Col>
-                  <Col>${order.itemsPrice}</Col>
+                  <Col>{order.itemsPrice} SO'M</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
                   <Col>Yetkazib Berish</Col>
-                  <Col>${order.shippingPrice}</Col>
+                  <Col>{order.shippingPrice} SO'M</Col>
                 </Row>
               </ListGroup.Item>
               {/* <ListGroup.Item>
@@ -196,7 +200,7 @@ const OrderScreen = ({ match, history }) => {
               <ListGroup.Item>
                 <Row>
                   <Col>Umumiy Narx</Col>
-                  <Col>${order.totalPrice}</Col>
+                  <Col>{order.totalPrice} SO'M</Col>
                 </Row>
               </ListGroup.Item>
               {/* {!order.isPaid && (

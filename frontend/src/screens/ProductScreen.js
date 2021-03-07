@@ -84,7 +84,7 @@ const ProductScreen = ({ history, match }) => {
                     text={`${product.numReviews} reviews`}
                   />
                 </ListGroup.Item>
-                <ListGroup.Item>Narx: ${product.price}</ListGroup.Item>
+                <ListGroup.Item>Narx: {product.price} SO'M</ListGroup.Item>
                 <ListGroup.Item>
                   Ma'lumot: {product.description}
                 </ListGroup.Item>
@@ -97,7 +97,7 @@ const ProductScreen = ({ history, match }) => {
                     <Row>
                       <Col>Narx:</Col>
                       <Col>
-                        <strong>${product.price}</strong>
+                        <strong>{product.price} SO'M</strong>
                       </Col>
                     </Row>
                   </ListGroup.Item>
@@ -151,7 +151,7 @@ const ProductScreen = ({ history, match }) => {
           <Row>
             <Col md={6}>
               <h2>Fikrlar</h2>
-              {product.reviews.length === 0 && <Message>No Reviews</Message>}
+              {product.reviews.length === 0 && <Message>Fikrlar yo'q</Message>}
               <ListGroup variant='flush'>
                 {product.reviews.map((review) => (
                   <ListGroup.Item key={review._id}>

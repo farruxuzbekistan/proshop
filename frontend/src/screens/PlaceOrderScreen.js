@@ -86,7 +86,7 @@ const PlaceOrderScreen = ({ history }) => {
             </ListGroup.Item>
 
             <ListGroup.Item>
-              <h2>Buyurtme Ma'hsulotlar</h2>
+              <h2>Buyurtma Ma'hsulotlar</h2>
               {cart.cartItems.length === 0 ? (
                 <Message>Sizning Korzinkangiz Bo'sh</Message>
               ) : (
@@ -108,7 +108,7 @@ const PlaceOrderScreen = ({ history }) => {
                           </Link>
                         </Col>
                         <Col md={4}>
-                          {item.qty} x ${item.price} = ${item.qty * item.price}
+                          {item.qty} x {item.price} SO'M = {item.qty * item.price} SO'M
                         </Col>
                       </Row>
                     </ListGroup.Item>
@@ -127,13 +127,13 @@ const PlaceOrderScreen = ({ history }) => {
               <ListGroup.Item>
                 <Row>
                   <Col>Mahsulotlar:</Col>
-                  <Col>${cart.itemsPrice}</Col>
+                  <Col>{cart.itemsPrice} SO'M</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
                   <Col>Yetkazib Berish</Col>
-                  <Col>${cart.shippingPrice}</Col>
+                  <Col>{cart.shippingPrice} SO'M</Col>
                 </Row>
               </ListGroup.Item>
               {/* <ListGroup.Item>
@@ -145,7 +145,7 @@ const PlaceOrderScreen = ({ history }) => {
               <ListGroup.Item >
                 <Row >
                   <Col>Umumiy Narx</Col>
-                  <Col>${cart.totalPrice}</Col>
+                  <Col>{cart.totalPrice} SO'M</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>

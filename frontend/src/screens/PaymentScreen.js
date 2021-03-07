@@ -13,7 +13,7 @@ const PaymentScreen = ({ history }) => {
     history.push('/shipping')
   }
 
-  const [paymentMethod, setPaymentMethod] = useState('Cash')
+  const [paymentMethod, setPaymentMethod] = useState('Naxt Pul')
 
   const dispatch = useDispatch()
 
@@ -34,13 +34,13 @@ const PaymentScreen = ({ history }) => {
             <Form.Check
               type='radio'
               label='Naxt Pul'
-              id='cash'
+              id='Naxt'
               name='paymentMethod'
               value='Naxt Pul'
               checked
               onChange={(e) => setPaymentMethod(e.target.value)}
             ></Form.Check>
-            <Form.Check
+            {/* <Form.Check
               type='radio'
               label='UzCard'
               id='uzcard'
@@ -71,7 +71,7 @@ const PaymentScreen = ({ history }) => {
               name='paymentMethod'
               value='Oson'
               onChange={(e) => setPaymentMethod(e.target.value)}
-            ></Form.Check>
+            ></Form.Check> */}
           </Col>
         </Form.Group>
 
